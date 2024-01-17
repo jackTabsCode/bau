@@ -1,4 +1,4 @@
-# bulk-animation-upload
+# bau (bulk-animation-upload)
 
 I made this quick and dirty tool to upload Roblox animations from a Model. I got tired of doing it manually.
 
@@ -11,7 +11,7 @@ I made this quick and dirty tool to upload Roblox animations from a Model. I got
 
 ## Example
 ```bash
-./bulk-animation-upload input.rbxm
+./bau input.rbxm
 ```
 
 ## Arguments
