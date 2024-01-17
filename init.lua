@@ -5,6 +5,8 @@ local roblox = require("@lune/roblox")
 
 local GROUP_ID
 local INPUT_NAME
+local CONTENT_URI_PREFIX = "rbxassetid://"
+local CONTENT_URI_PREFIX_ENABLED = false
 local VERBOSE = false
 
 function log(...)
@@ -24,6 +26,8 @@ for index, arg in process.args do
 		GROUP_ID = process.args[index + 1]
 	elseif arg == "-v" or arg == "--verbose" then
 		VERBOSE = true
+	elseif arg == "-u" or arg == "--uri" then
+		CONTENT_URI_PREFIX_ENABLED = true
 	end
 end
 
@@ -96,7 +100,12 @@ for _, anim in deser:GetChildren() do
 
 	log(`Uploaded {anim.Name}`)
 
-	output = `{output}{anim.Name}: {res.body}\n`
+	local id = res.body
+	if CONTENT_URI_PREFIX_ENABLED then
+		id = CONTENT_URI_PREFIX .. id
+	end
+
+	output = `{output}{anim.Name}: {id}\n`
 end
 
 fs.writeFile("output.txt", output)
