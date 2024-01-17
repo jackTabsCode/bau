@@ -28,7 +28,7 @@ for index, arg in process.args do
 end
 
 if not INPUT_NAME then
-	error("No input file specified. Specify one using --input <file>")
+	error("No input file specified.")
 end
 
 if GROUP_ID and not tonumber(GROUP_ID) then
