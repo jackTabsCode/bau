@@ -62,6 +62,10 @@ log(`CSRF token: {csrf}`)
 local output = ""
 
 for _, anim in deser:GetChildren() do
+	if anim.ClassName ~= "KeyframeSequence" then
+		continue
+	end
+
 	log(`Uploading {anim.Name}`)
 	local res = net.request({
 		url = URL,
