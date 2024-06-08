@@ -2,6 +2,9 @@
 
 I made this quick and dirty tool to upload Roblox animations from a Model. I got tired of doing it manually.
 
+> [!WARNING]
+> Archived. Please use [asphalt](https://github.com/jackTabsCode/asphalt) in new work
+
 ## Usage
 - Create your animations in Roblox Studio.
 - In your animation rig, you should have a file called `AnimSaves` with all of your `KeyframeSequence`(s). Save this to a file.
